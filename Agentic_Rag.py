@@ -17,7 +17,7 @@ from crewai import Task
 
 llm = ChatOpenAI(
     base_url = "https://api.groq.com/openai/v1",
-    openai_api_key = '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',
+    openai_api_key = 'GROQ_API_KEY',
     model_name = "llama-3.1-8b-instant",
     temperature=1,
     max_tokens=1024
@@ -28,7 +28,7 @@ rag = PDFSearchTool(pdf ="NIPS-2017-attention-is-all-you-need-Paper.pdf",
                         llm=dict(
                             provider = "groq",
                             config=dict(
-                                api_key = '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',
+                                api_key = 'PDFST_API_KEY',
                                 model ="llama-3.1-8b-instant"),
                             ),
                         embedder = dict(
@@ -40,7 +40,7 @@ rag = PDFSearchTool(pdf ="NIPS-2017-attention-is-all-you-need-Paper.pdf",
     )
 
 
-web_tool_search = TavilyClient(api_key='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')
+web_tool_search = TavilyClient(api_key='WEBT_API_KEY')
 
 @tool
 def router_tool(question):
